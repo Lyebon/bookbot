@@ -10,10 +10,14 @@ def main():
     content = get_book_text("books/frankenstein.txt")
     count = count_words(content)
     letters = count_letters(content)
-    sort_letters = sort_on(letters)
-    print(f"{count} words found in the document")
-    print (letters)
-    print (sort_letters)
+    sort_letters = sort_on_char(letters)
+    
+    print(f"============ BOOKBOT ============\nAnalyzing book found at books/frankenstein.txt...\n")
+    print(f"----------- Word Count ----------\n    Found {count} total words\n--------- Character Count -------")
+    for letter in sort_letters:
+        print(f"{letter["char"]}: {letter["num"]}")
+    print("============= END ===============")
+
 
 
 main()

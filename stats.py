@@ -1,5 +1,3 @@
-
-
 def count_words(content):
     split = content.split()
     count = 0
@@ -19,9 +17,13 @@ def count_letters(content):
                 letter_count[letter] = 1
     return letter_count
 
-def sort_on(letter_count):
-    sort_letters = {}
-    for letter in letter_count:
-        if letter.isalpha():
-            sort_letters[letter] = letter_count[letter]
-    return sort_letters
+def sort_on_char(char_dict):
+    order = []
+    for char in char_dict:
+        if char.isalpha():
+             order.append({"char": char, "num": char_dict[char]})
+    order.sort(reverse=True, key=sort_on)
+    return order
+
+def sort_on(item):
+    return item["num"]
